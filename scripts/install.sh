@@ -94,7 +94,7 @@ file3=${BIN_DIR}/ton/validator-engine-console/validator-engine-console
 if  [ ! -f "${file1}" ] || [ ! -f "${file2}" ] || [ ! -f "${file3}" ]; then
 	echo "TON does not exists, building"
 	wget https://raw.githubusercontent.com/${author}/${repo}/${branch}/scripts/ton_installer.sh -O /tmp/ton_installer.sh
-	bash /tmp/ton_installer.sh -c ${config}
+	bash /tmp/ton_installer.sh -c ${config} -v ${ton_node_version}
 fi
 
 # Cloning mytonctrl
