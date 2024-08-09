@@ -27,6 +27,7 @@ show_help_and_exit() {
 	echo ' -r               Set MyTonCtrl git repo'
 	echo ' -b               Set MyTonCtrl git repo branch'
 	echo ' -m  MODE             Install MyTonCtrl with specified mode (validator or liteserver)'
+  echo ' -v  VERSION      Specify the ton node version (commit, branch, or tag)'
 	echo ' -h               Show this help'
     exit
 }
@@ -43,7 +44,7 @@ dump=false
 
 
 
-while getopts c:tida:r:b:m: flag
+while getopts c:tida:r:b:m:v: flag
 do
 	case "${flag}" in
 		c) config=${OPTARG};;
