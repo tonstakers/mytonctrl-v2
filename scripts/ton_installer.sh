@@ -170,11 +170,6 @@ ninja -j ${cpu_number} fift validator-engine lite-client validator-engine-consol
 echo -e "${COLOR}[5/6]${ENDC} Downloading config files"
 wget ${config} -O global.config.json
 
-# create symbolic link if branch not eq mytonctrl
-if [ "${repo}" != "mytonctrl" ]; then
-    ln -sf ${SOURCES_DIR}/${repo} ${SOURCES_DIR}/mytonctrl
-fi
-
 # Выход из программы
 echo -e "${COLOR}[6/6]${ENDC} TON software installation complete"
 exit 0
