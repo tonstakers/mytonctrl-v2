@@ -2,16 +2,14 @@
 #!/bin/bash
 set -e
 
-#todo remove - debug only
-# fork tonstackers
-
-
 # Проверить sudo
 if [ "$(id -u)" != "0" ]; then
 	echo "Please run script as root"
 	exit 1
 fi
 
+# Get arguments
+config=https://ton-blockchain.github.io/global.config.json
 while getopts ":c:v:h" flag; do
     case "${flag}" in
         c) config=${OPTARG};;
@@ -22,9 +20,6 @@ while getopts ":c:v:h" flag; do
             exit 1 ;;
     esac
 done
-
-echo " config 42: ${config}"
-echo "checkout to ${ton_node_version}"
 
 # Цвета
 COLOR='\033[95m'
@@ -80,7 +75,7 @@ elif [[ "$OSTYPE" =~ darwin.* ]]; then
 
 	echo "Please, write down your username, because brew package manager cannot be run under root user:"
 	read LOCAL_USERNAME
-
+	
 	su $LOCAL_USERNAME -c "brew update"
 	su $LOCAL_USERNAME -c "brew install openssl cmake llvm"
 elif [ "$OSTYPE" == "freebsd"* ]; then
