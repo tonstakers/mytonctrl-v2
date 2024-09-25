@@ -57,6 +57,5 @@ WantedBy = multi-user.target
 EOF
 
 chmod 664 $DAEMON_PATH
-chmod +x $DAEMON_PATH
 systemctl daemon-reload
 systemctl enable ${name}
