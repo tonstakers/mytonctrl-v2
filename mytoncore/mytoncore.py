@@ -3603,7 +3603,7 @@ class MyTonCore():
 		]
 		print(f"CalculateLoanAmount data: {data}")
 
-		url = "http://127.0.0.1:8801/runGetMethod"
+		url = "http://127.0.0.1:8000/runGetMethod"
 		res = requests.post(url, json=data)
 		res_data = res.json()
 		if res_data.get("ok") is False:
